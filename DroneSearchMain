@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello world!");
+		System.out.println("We will testing drones out today!");
+		System.out.println("The map will be 100 units in size.");
+
+		Scanner scan = new Scanner(System.in);
+		//JFrame frame = new JFrame("FrameDemo");
+
+		char mapSize = 100 + 2;
+		char[][] map = new char[mapSize][mapSize];
+
+		for (int i = 0; i < mapSize; i++) {
+			map[i][0] = '#';
+		}
+
+		for (int j = 0; j < mapSize; j++) {
+			map[0][j] = '#';
+		}
+
+		for (int i = 0; i < mapSize; i++) {
+			map[i][mapSize - 1] = '#';
+		}
+
+		for (int j = 0; j < mapSize; j++) {
+			map[mapSize - 1][j] = '#';
+		}
+
+		for (int i = 1; i < mapSize - 1; i++) {
+			for (int j = 1; j < mapSize - 1; j++) {
+				map[i][j] = '-';
+			}
+		}
+
+		for (int i = 0; i < mapSize; i++) {
+			for (int j = 0; j < mapSize; j++) {
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+
+		// Environment creation
+		// Obstacle population
+		// Drone insertion
+		// Searching operation
+	}
+}
