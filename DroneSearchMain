@@ -8,8 +8,9 @@ class Main {
 
 		Scanner scan = new Scanner(System.in);
 		//JFrame frame = new JFrame("FrameDemo");
+		Random random = new Random();
 
-		char mapSize = 100 + 2;
+		char mapSize = 95 + 2;
 		char[][] map = new char[mapSize][mapSize];
 
 		for (int i = 0; i < mapSize; i++) {
@@ -42,6 +43,18 @@ class Main {
 		}
 
 		// Environment creation
+		
+		for (int i = 1; i < mapSize - 1; i++) {
+			for (int j = 1; j < mapSize - 1; j++) {
+				int chance = random.nextInt(101);
+
+				if (chance < 10)
+				{
+					// Make building
+				}
+			}
+		}
+
 		// Obstacle population
 		// Drone insertion
 		// Searching operation
