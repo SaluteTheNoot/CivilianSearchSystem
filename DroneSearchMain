@@ -13,6 +13,8 @@ class Main {
 		char mapSize = 95 + 2;
 		char[][] map = new char[mapSize][mapSize];
 
+		// Environment creation
+
 		for (int i = 0; i < mapSize; i++) {
 			map[i][0] = '#';
 		}
@@ -35,14 +37,7 @@ class Main {
 			}
 		}
 
-		for (int i = 0; i < mapSize; i++) {
-			for (int j = 0; j < mapSize; j++) {
-				System.out.print(map[i][j]);
-			}
-			System.out.println();
-		}
-
-		// Environment creation
+		// Obstacle population
 		
 		for (int i = 1; i < mapSize - 1; i++) {
 			for (int j = 1; j < mapSize - 1; j++) {
@@ -50,13 +45,22 @@ class Main {
 
 				if (chance < 10)
 				{
-					// Make building
+					map[i][j] = '|';
 				}
 			}
 		}
 
-		// Obstacle population
 		// Drone insertion
+
+		map[0][mapSize / 2] = 'D';
+
 		// Searching operation
+
+		for (int i = 0; i < mapSize; i++) {
+			for (int j = 0; j < mapSize; j++) {
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
 	}
 }
