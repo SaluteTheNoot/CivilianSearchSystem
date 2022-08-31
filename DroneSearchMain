@@ -15,6 +15,45 @@ class Main {
 
 		// Environment creation
 
+		makeMap(map, mapSize);
+
+		makeObstacles(map, mapSize);
+
+		// Place people in someplace
+
+		map[mapSize / 2][mapSize / 2] = 'P';
+
+		// Drone insertion
+
+		map[0][mapSize / 2] = 'D';
+
+		char current = 'D';
+		char next = ' ';
+		while (next != 'P')
+		{
+			next = 
+		}
+
+		printMap(map, mpaSize);
+	}
+
+	// Obstacle population
+	public void makeObstacles(char[][] map, int mapSize)
+	{
+		for (int i = 1; i < mapSize - 1; i++) {
+			for (int j = 1; j < mapSize - 1; j++) {
+				int chance = random.nextInt(101);
+
+				if (chance < 25)
+				{
+					map[i][j] = '|';
+				}
+			}
+		}
+	}
+
+	public void makeMap(char[][] map)
+	{
 		for (int i = 0; i < mapSize; i++) {
 			map[i][0] = '#';
 		}
@@ -36,26 +75,10 @@ class Main {
 				map[i][j] = '-';
 			}
 		}
-
-		// Obstacle population
+	}
 		
-		for (int i = 1; i < mapSize - 1; i++) {
-			for (int j = 1; j < mapSize - 1; j++) {
-				int chance = random.nextInt(101);
-
-				if (chance < 10)
-				{
-					map[i][j] = '|';
-				}
-			}
-		}
-
-		// Drone insertion
-
-		map[0][mapSize / 2] = 'D';
-
-		// Searching operation
-
+	public void printMap(char[][] map, int mapSize)
+	{
 		for (int i = 0; i < mapSize; i++) {
 			for (int j = 0; j < mapSize; j++) {
 				System.out.print(map[i][j]);
